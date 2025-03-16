@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Scalpyard</title>
+   <style>
+       div.a {
+           font-family: 'Times New Roman', Times, serif;
+           font-weight: normal;
+       }
+
+
+       /* Style for modal */
+       .modal {
+           display: none;
+           position: fixed;
+           z-index: 1;
+           left: 0;
+           top: 0;
+           width: 100%;
+           height: 100%;
+           background-color: rgba(255, 0, 0, 0.5);
+       }
+
+
+       .modal-content {
+           background-color: rgb(255, 0, 0);
+           margin: 15% auto;
+           padding: 20px;
+           border: 1px solid #888;
+           width: 50%;
+           text-align: center;
+           box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.2);
+       }
+
+
+       .close {
+           float: right;
+           font-size: 28px;
+           cursor: pointer;
+           color: white;
+       }
+
+
+       /* Style for random/grid popups */
+       .popup {
+           position: absolute; /* Absolute positioning */
+           padding: 20px;
+           background-color: #f2f2f2;
+           border: 2px solid #333;
+           box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+           text-align: center;
+           border-radius: 10px;
+           width: 250px; /* Set a fixed width */
+           font-family: 'Times New Roman', Times, serif, sans-serif;
+           color: #333;
+       }
+
+
+       .popup button {
+           background-color: #ff4444;
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           font-size: 16px;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s;
+       }
+
+
+       .popup button:hover {
+           background-color: #ff0000;
+       }
+
+
+       .popup p {
+           font-size: 18px;
+           font-weight: bold;
+       }
+
+
+       /* Full-Screen PSA Message */
+       .psa-message {
+           display: none;
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-color: black;
+           color: white;
+           text-align: center;
+           padding-top: 20%;
+           font-size: 36px;
+           font-weight: bold;
+           z-index: 9999;
+       }
+
+
+       .psa-message button {
+           margin-top: 20px;
+           font-size: 24px;
+           padding: 10px 20px;
+           background-color: red;
+           color: white;
+           border: none;
+           cursor: pointer;
+           border-radius: 5px;
+       }
+   </style>
+</head>
+<body>
+
+
+   <div class="a">
+       <h1 style="font-size: 50px">Scalpyard</h1>
+       <h2>What is a Scalpyard?</h2>
+       <p style="font-size: xx-large;">A scrapyard, also known as a junkyard, wrecking yard, or salvage yard, is a facility that collects, sorts, processes, and sells scrap metal and other recyclable materials...</p>
+
+
+
+
+       <!-- Button to show custom modal -->
+       <button onclick="openModal()">SUMMARIZE</button>
+
+
+       <!-- Custom Modal -->
+       <div id="myModal" class="modal">
+           <div class="modal-content">
+               <span class="close" onclick="closeModal()">&times;</span>
+               <h1 style="text-align: center; color: white;">WARNING!</h1>
+               <p style=" color: white;">Your computer has a virus. You risk data being lost in you wait longer. Call 919-656-3244 right now to fix it.</p>
+           </div>
+       </div>
+   </div>
+
+
+
+
+   <h2>Types of Scrapyards</h2>
+   <p>Scrap Yards can be categorized based on the type of materials they handle...</p>
+<p>Automotive Scrap Yards – Specialize in dismantling and recycling old, damaged, or abandoned vehicles.
+   Metal Scrap Yards – Focus on collecting and processing ferrous (iron, steel) and non-ferrous metals (copper, aluminum, brass).
+   Electronics Scrap Yards – Recycle electronic waste (e-waste) like old computers, smartphones, and circuit boards.
+   Construction and Demolition Scrap Yards – Deal with scrap from construction sites, including rebar, pipes, and concrete.
+   How Scrap Yards Operate
+   The basic process of a scrapyard includes several steps:
+   1. Collection
+   Individuals, businesses, and municipalities bring scrap materials to the yard.
+   Some scrapyards offer pickup services for large-scale scrap.
+   2. Sorting and Separation
+   Materials are sorted based on type (ferrous vs. non-ferrous metals, plastics, etc.).
+   Advanced scrapyards use magnets, shredders, and other sorting equipment.
+   3. Processing and Shredding
+   Large objects like cars and appliances are broken down into smaller pieces.
+   Metal is often melted down or compacted for easier transport.
+   4. Selling and Distribution
+   Recycled materials are sold to manufacturers who use them to create new products.
+   Steel mills, foundries, and electronics manufacturers are common buyers.
+   Materials Found in Scrapyards
+   Scrapyards handle a variety of materials, including:
+   Ferrous metals (iron, steel)
+   Non-ferrous metals (copper, aluminum, brass, lead)
+   Plastics (from appliances and vehicles)
+   Glass (from cars, windows, and electronics)
+   Electronic waste (computers, televisions, mobile phones)
+   Automobile Scrapyards and Auto Recycling
+   Car scrapyards, also called junkyards or wrecking yards, dismantle vehicles and sell usable parts. The process includes:
+   Removing hazardous fluids (oil, coolant, fuel).
+   Dismantling for usable parts (engines, transmissions, tires).
+   Crushing and shredding the remaining car body.
+   Recycling metal to be used in new manufacturing.
+   Common Auto Parts Salvaged
+   Engines and transmissions – Often resold for refurbishing.
+   Batteries – Recycled for lead and plastic components.
+   Catalytic converters – Contain valuable metals like platinum and palladium.
+   Scrap metal – The steel from cars is one of the most commonly recycled materials.
+   Economic and Environmental Impact
+   Economic Benefits
+   Job creation – Scrapyards employ workers for sorting, processing, and selling materials.
+   Metal supply – The recycled metal industry supports manufacturing sectors.
+   Cost savings – Businesses save money by purchasing recycled materials instead of mining new ones.
+   Environmental Benefits
+   Reduces landfill waste – Scrapyards divert millions of tons of waste from landfills each year.
+   Energy conservation – Recycling metals uses less energy than mining and refining new metal.
+   Lower emissions – Less mining and processing lead to lower carbon emissions.
+   Challenges Facing Scrapyards
+   Despite their benefits, scrapyards face several challenges:
+   Fluctuating Metal Prices – The price of scrap metal depends on global demand, affecting profitability.
+   Environmental Regulations – Scrapyards must comply with laws to prevent pollution from hazardous materials.
+   Theft and Illegal Scrapping – Stolen metal, especially copper wiring, is a problem in some areas.
+   E-waste Handling – Electronic components contain hazardous substances like lead and mercury, requiring careful disposal.
+   Future of Scrapyards
+   With growing environmental concerns and advancements in recycling technology, scrapyards are evolving. Some future trends include:
+   Automation and AI – Robotic sorting systems to improve efficiency.
+   Better e-waste recycling – New methods for safely recovering precious metals from electronics.
+   Sustainability initiatives – Stricter laws encouraging responsible recycling practices.
+   Urban mining – Extracting valuable metals from electronic waste rather than traditional mining.
+   Conclusion
+   Scrapyards are essential for waste management, recycling, and resource conservation. They contribute to the economy, reduce environmental impact, and support industries that rely on recycled materials. As technology and sustainability efforts improve, scrapyards will continue to play a crucial role in global recycling efforts.
+   </p>
+
+
+
+
+   <script>
+      
+      
+       function openModal() {
+           document.getElementById("myModal").style.display = "block";
+       }
+
+
+       function closeModal() {
+           document.getElementById("myModal").style.display = "none";
+           // Trigger random/grid popups after closing the modal
+           createRandomPopups();  // You can also call `createGridPopups()` here if you prefer grid-based positioning.
+       }
+
+
+       function createRandomPopups() {
+           let popupCount = 10; // Number of popups to generate
+           for (let i = 0; i < popupCount; i++) {
+               let popup = document.createElement("div");
+               popup.className = "popup";
+               popup.innerHTML = `<p>VIRUS ALERT!!! SUSPISIOUS MALWARE ENTERING THE COMPUTER</p>
+                                  <button onclick="closeCustomPopup()">X</button>`;
+
+
+               // Random position calculation
+               let randomTop = Math.floor(Math.random() * (window.innerHeight - 200)) + 10;  // Random top value (within window height)
+               let randomLeft = Math.floor(Math.random() * (window.innerWidth - 250)) + 10; // Random left value (within window width)
+
+
+               popup.style.top = randomTop + "px";   // Apply random top position
+               popup.style.left = randomLeft + "px"; // Apply random left position
+
+
+               document.body.appendChild(popup);
+           }
+       }
+
+
+       function closeCustomPopup() {
+           // You can call other functions here if you want more popups when clicking 'X'
+           createRandomPopups();
+       }
+   </script>
+
+
+</body>
+</html>
+
+
