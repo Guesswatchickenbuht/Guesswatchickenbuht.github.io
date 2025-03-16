@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Scalpyard</title>
+   <style>
+       /* Your styles here */
+       .popup {
+           position: absolute;
+           padding: 20px;
+           background-color: #f2f2f2;
+           border: 2px solid #333;
+           box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+           text-align: center;
+           border-radius: 10px;
+           width: 250px;
+           font-family: 'Times New Roman', Times, serif, sans-serif;
+           color: #333;
+       }
+
+       .popup button {
+           background-color: #ff4444;
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           font-size: 16px;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s;
+       }
+
+       .popup button:hover {
+           background-color: #ff0000;
+       }
+
+       .popup p {
+           font-size: 18px;
+           font-weight: bold;
+       }
+   </style>
+</head>
+<body>
+   <div class="a">
+       <h1>Scalpyard</h1>
+       <h2>What is a Scalpyard?</h2>
+       <p>A scrapyard is a facility that collects, sorts, processes, and sells scrap metal and other recyclable materials...</p>
+       <button onclick="openModal()">SUMMARIZE</button>
+
+       <!-- Modal content -->
+       <div id="myModal" class="modal">
+           <div class="modal-content">
+               <span class="close" onclick="closeModal()">&times;</span>
+               <h1>WARNING!</h1>
+               <p>Your computer has a virus. Call 919-656-3244 right now to fix it.</p>
+           </div>
+       </div>
+   </div>
+
+   <script>
+       let popupCount = 0;  // Counter for popups
+       const popupLimit = 100;  // Maximum number of popups allowed
+
+       // Function to open the modal
+       function openModal() {
+           document.getElementById("myModal").style.display = "block";
+       }
+
+       // Function to close the modal
+       function closeModal() {
+           document.getElementById("myModal").style.display = "none";
+           createRandomPopups();  // Create popups after closing the modal
+       }
+
+       // Function to create random popups
+       function createRandomPopups() {
+           if (popupCount >= popupLimit) {
+               redirectUser();  // Redirect to another website if limit is reached
+               return;  // Prevent creating more popups
+           }
+
+           let popupToCreate = Math.min(10, popupLimit - popupCount);  // Limit the number of popups created
+           for (let i = 0; i < popupToCreate; i++) {
+               let popup = document.createElement("div");
+               popup.className = "popup";
+               popup.innerHTML = `<p>VIRUS ALERT!!! SUSPICIOUS MALWARE ENTERING THE COMPUTER</p><button onclick="closeCustomPopup()">X</button>`;
+
+               let randomTop = Math.floor(Math.random() * (window.innerHeight - 200)) + 10;
+               let randomLeft = Math.floor(Math.random() * (window.innerWidth - 250)) + 10;
+
+               popup.style.top = randomTop + "px";
+               popup.style.left = randomLeft + "px";
+
+               document.body.appendChild(popup);
+           }
+
+           popupCount += popupToCreate;  // Update popup count
+       }
+
+       // Close individual popup and create more
+       function closeCustomPopup() {
+           createRandomPopups();
+       }
+
+       // Function to redirect user after reaching popup limit
+       function redirectUser() {
+           window.location.href = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodhousekeeping.com%2Fuk%2Flifestyle%2Fg62879688%2Fknock-knock-jokes%2F&psig=AOvVaw0XWVH6tpoAK9ZAn4fnUEJX&ust=1742244694671000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDBorW9j4wDFQAAAAAdAAAAABAM";  // Replace with your target website URL
+       }
+   </script>
+</body>
+</html>
